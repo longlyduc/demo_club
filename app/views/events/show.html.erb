@@ -8,10 +8,10 @@
           <h1><%= @event.name %></h1>
           <hr>
           <div class="row">
-            <div class="col-md-3 fa fa-money"><strong> <%= t "expense" %></strong> <%= @event.expense %> <%= t "vnd" %></div>
-            <div class="col-md-3 fa fa-map-marker"><strong> <%= t "location" %></strong> <%= @event.location %></div>
-            <div class="col-md-3 fa fa-calendar"><strong> <%= t "date_start" %></strong> <%= @event.date_start %></div>
-            <div class="col-md-3 fa fa-clock-o"><strong> <%= t "date_end" %></strong> <%= @event.date_end %></div>
+            <div class="col-md-3 fa fa-money"><strong> <%= t "expense" %></strong> <br><%= @event.expense %> <%= t "vnd" %></div>
+            <div class="col-md-3 fa fa-map-marker"><strong> <%= t "location" %></strong> <br><%= @event.location %></div>
+            <div class="col-md-3 fa fa-calendar"><strong> <%= t "date_start" %></strong> <br><%= @event.date_start %></div>
+            <div class="col-md-3 fa fa-clock-o"><strong> <%= t "date_end" %></strong> <br><%= @event.date_end %></div>
           </div>
           <hr>
             <p><%= t "event_content" %></p>
@@ -66,6 +66,8 @@
       <hr>
     </div>
   </section>
+  <%= render partial: "events/comment", locals: {target: @event} if @event.comments.any? %>
+  <%= render "new_comment" %>
 </div>
 <div class="join-event-toggle-container">
   <%= render "user_events/join_event_toggle" %>

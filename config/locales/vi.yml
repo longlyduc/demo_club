@@ -140,9 +140,9 @@ vi:
     update_fail: "Cập nhập tổ chức thất bại!"
   submit: "Gửi"
   edit: "Sửa"
-  time:
+  date:
     formats:
-      date: "%H:%M %d/%m/%Y"
+      date_utc: "%d/%M/%Y %H:%M"
   read_the_article: "Đọc điều khoản"
   view_more: "Xem thêm ..."
   do_nothing: "javascript:void(0)"
@@ -344,3 +344,5 @@ vi:
   not_found_event: "Không tìm thấy sự kiện!"
   create_activity_fails: "Ghi nhật ký hoạt động thất bại!"
   you_rated: "Bạn đã đánh giá rồi!"
+  your_comment: "Đăng bình luận tại đây..."
+  post_comment: "Đăng bình luận"

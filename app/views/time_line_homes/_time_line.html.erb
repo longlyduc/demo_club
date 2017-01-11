@@ -1,0 +1,49 @@
+<div class="col-sm-7">
+  <div class="block">
+    <div class="block-title"><h2><strong>Time</strong> Line</h2></div>
+    <div class="block-content-full">
+      <ul class="media-list media-feed media-feed-hover need load-more">
+        <% @clubs.each do |club| %>
+          <% club.activities.each do |active| %>
+            <li class="media">
+              <%= image_tag active.person_target.avatar,
+                class: "img-circle pull-left img-user-time-line" %>
+              <div class="media-body">
+                <p class="push-none">
+                    <span class="text-muted pull-right">
+                      <small><%= time_ago_in_words active.created_at %></small>
+                      <span class="text-success">
+                        <i class="fa fa-globe"></i>
+                      </span>
+                    </span>
+                    <strong>
+                      <%= link_to active.person_target.full_name, active.person_target %>
+                      has been <%= active.action %> in the
+                      <span class="text-danger"><%= active.target.name %></span>
+                    </strong>
+                </p>
+                <a href="javascript:void(0)" class="btn btn-xs btn-default btn-like">
+                  <i class="fa fa-thumbs-o-up"></i> Like
+                </a>
+                <a href="javascript:void(0)"
+                  class="btn btn-xs btn-default btn-comment" id="<%= active.id %>">
+                  <i class="fa fa-comments-o"></i> Comment
+                </a>
+                <div class="list-comment-time-line-<%= active.id %>">
+                  <%= render partial: "time_line_homes/comments",
+                    locals: {active: active} %>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+      <span class="media text-center">
+        <a href="javascript:void(0)"
+          class="btn btn-xs btn-default push load-more-toggle"
+          id="need">View more..
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
