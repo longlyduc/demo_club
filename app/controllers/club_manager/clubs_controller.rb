@@ -7,9 +7,6 @@ class ClubManager::ClubsController < BaseClubManagerController
     @event = Event.new
   end
 
-  def edit
-  end
-
   def update
     if @club.update_attributes club_params
       create_acivity @club, current_user, Settings.update

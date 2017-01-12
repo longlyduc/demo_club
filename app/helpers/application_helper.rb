@@ -26,4 +26,8 @@ module ApplicationHelper
   def manager_of_club user
     @user_clubs = user.user_clubs.manager
   end
+
+  def image_holder album
+    album.images.first.url
+  end
 end

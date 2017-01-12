@@ -1,0 +1,30 @@
+<% if @images.blank? %>
+  <div class="block"><h1 class="text-center"><strong><b><%= t "club_manager.image.no_image" %></b></strong></h1></div>
+<% else %>
+  <div class="row">
+    <% @images.each do |image| %>
+      <div class="col-sm-3 gallery-image image-full">
+        <%= image_tag image.url, class: "image-gallery image-full" %>
+        <div class="carousel-caption">
+          <h1><p><%= image.name %></p></h1>
+        </div>
+        <div class="gallery-image-options text-center">
+          <div class="btn-group btn-group-sm">
+            <%= link_to t("view"), "#{image.url}",
+              class: "gallery-link btn btn-sm btn-alt btn-primary", title: image.name %>
+            <%= link_to t("delete"),
+              club_manager_club_album_image_url(album_id: @album.id, id: image.id), method: :delete,
+              data: {confirm: t("club_manager.image.confirm_delete")}, class: "btn btn-sm btn-alt btn-warning" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="text-center">
+      <ul class="pagination pagination-lg">
+         <%= paginate @images %>
+      </ul>
+    </div>
+  </div>
+<% end %>

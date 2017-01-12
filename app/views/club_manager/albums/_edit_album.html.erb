@@ -1,0 +1,26 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h2 class="modal-title"><i class="fa fa-camera"></i> <%= t "club_manager.image.edit" %></h2>
+    </div>
+    <div class="modal-body">
+      <%= form_for [:club_manager, @club, album], method: :patch, html: {multipart: true, enctype: "multipart/form-data", class: "form-horizontal form-bordered"} do |f| %>
+        <fieldset>
+          <legend><strong><%= album.name %><%= t "information" %></strong></legend>
+          <div class="form-group">
+            <label class="col-md-3 control-label"><%= t "name" %></label>
+            <div class="col-md-8">
+              <%= f.text_field :name, value: album.name, class: "form-control" %>
+            </div>
+          </div>
+        </fieldset>
+        <div class="form-group form-actions">
+          <div class="col-xs-12 text-right">
+            <%= f.button t("close"), class: "btn btn-sm btn-warning","data-dismiss": "modal" %>
+            <%= f.button t("save"), class: "btn btn-sm btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

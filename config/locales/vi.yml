@@ -272,6 +272,9 @@ vi:
       create: "  THÊM MỚI ẢNH"
       no_image: "Bộ sưu tập này tạm thời chưa có ảnh"
       success_create: "Tạo mới ảnh thành công!"
+      confirm_delete: "Bạn có muốn xóa ảnh này không?"
+      deleted: "Xóa ảnh thành công!"
+      cant_delete: "Không thể xóa ảnh, vui lòng xem lại!"
     album:
       album: "Bộ sưu tập"
       not_found: "Không tìm thấy bộ sưu tập!"
@@ -280,6 +283,7 @@ vi:
       guide: "Tạo bộ sưu tập mới"
       name_holder: "Nhập tên bộ sưu tập"
       success_create: "Tạo mới bộ sưu tập thành công!"
+      success_update: "Tên bộ sưu tập đưọc câph nhập thành công!"
     event:
       new: "Tạo mới sự kiện"
       name_guide: "Tên sự kiện không thể để trống và phải có ít nhất 10 ký tự"
@@ -315,6 +319,8 @@ vi:
       album:
         name: "Tên bộ sưu tập"
     errors:
+      messages:
+        record_invalid: "Bản ghi không hợp lệ"
       models:
         event:
           attributes:

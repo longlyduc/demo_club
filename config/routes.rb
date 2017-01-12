@@ -24,6 +24,9 @@ Rails.application.routes.draw do
     resources :clubs do
       resources :members, only: [:index, :show]
       resources :events
+      resources :albums do
+        resources :images
+      end
     end
   end
 
