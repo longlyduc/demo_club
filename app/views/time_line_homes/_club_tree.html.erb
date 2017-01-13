@@ -1,0 +1,28 @@
+<div class="col-sm-5">
+      <div class="block full">
+          <div class="block-title">
+              <h2>Time <strong>Tree</strong></h2>
+          </div>
+          <div class="timeline block-content-full">
+              <ul class="timeline-list timeline-hover time-tree load-more">
+                <% @clubs.each do |club| %>
+                  <% club.activities.each do |active| %>
+                      <li>
+                        <div class="timeline-icon"><i class="fa fa-clock-o"></i></div>
+                        <div class="timeline-content">
+                          <p class="push-bit">
+                            <strong>
+                              <%= link_to active.created_at, "javascript:void(0)" %>
+                            </strong>
+                          </p>
+                        </div>
+                      </li>
+                  <% end %>
+                <% end %>
+              </ul>
+          </div>
+      </div>
+      <span class="media text-center">
+        <a href="javascript:void(0)" class="btn btn-xs btn-default push load-more-toggle" id="time-tree">Load more..</a>
+      </span>
+  </div>

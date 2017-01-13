@@ -17,3 +17,6 @@ min_rate: 1
 max_rate: 5
 ratings: "Ratings"
 round_float: 1
+active: "Activity"
+event: "Event"
+max_show_comment: 5
