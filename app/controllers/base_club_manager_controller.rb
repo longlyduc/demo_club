@@ -6,8 +6,8 @@ class BaseClubManagerController < ApplicationController
 
   protected
   def manager_verify
-    @manager = current_user.user_clubs.manager
-    unless @manager
+    @managers = current_user.user_clubs.manager
+    unless @managers.any?
       flash[:danger] = t("manager_require")
       redirect_to root_path
     end

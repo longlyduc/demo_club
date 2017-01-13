@@ -1,5 +1,11 @@
 class ClubManager::EventsController < BaseClubManagerController
   def index
+    @club = Club.find_by id: params[:club_id]
+    unless @club
+      flash[:danger] = t "cant_found_club"
+      redirect_to club_manager_path
+    end
+    @events = @club.events.newest.page(params[:page]).per Settings.per_page_event
   end
 
   def create

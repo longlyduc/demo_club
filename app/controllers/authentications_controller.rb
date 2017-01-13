@@ -3,8 +3,4 @@ class AuthenticationsController < Devise::SessionsController
 
   def new
   end
-
-  def after_sign_in_path_for(resource)
-    time_line_homes_path
-  end
 end

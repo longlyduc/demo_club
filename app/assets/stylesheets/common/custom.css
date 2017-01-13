@@ -8,3 +8,18 @@
   background-color: #daf2e4;
   border-color: #b8e5cb;
 }
+.image-full {
+  height: 200px !important;
+  width: auto !important;
+}
+.album-full {
+  height: 270px !important;
+  width: auto !important;
+}
+.border {
+  border: solid;
+  border-width: thin;
+}
+.img-header {
+  width: 100%;
+}

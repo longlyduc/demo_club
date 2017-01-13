@@ -37,8 +37,10 @@
             <span class="sidebar-nav-mini-hide"><%= t "members" %></span>
           <% end %>
           <ul>
-            <% manager_of_club(current_user).each do |f| %>
-              <li><%= link_to f.name, club_manager_club_members_path(f.club_id) %></li>
+            <% manager_of_club(current_user).each do |club| %>
+              <li>
+                <%= link_to club.name, club_manager_club_members_path(club.club_id) %>
+              </li>
             <% end %>
           </ul>
         </li>
@@ -49,8 +51,10 @@
             <span class="sidebar-nav-mini-hide"><%= t "my_clubs" %></span>
           <% end %>
           <ul>
-            <% manager_of_club(current_user).each do |f| %>
-              <li><%= link_to f.name, club_manager_club_path(f.club_id) %></li>
+            <% manager_of_club(current_user).each do |club| %>
+              <li>
+                <%= link_to club.name, club_manager_club_path(club.club_id) %>
+              </li>
             <% end %>
           </ul>
         </li>
@@ -61,8 +65,10 @@
             <span class="sidebar-nav-mini-hide"><%= t "clubs's_album" %></span>
           <% end %>
           <ul>
-            <% manager_of_club(current_user).each do |f| %>
-              <li><%= link_to f.name, t("do_nothing") %></li>
+            <% manager_of_club(current_user).each do |club| %>
+              <li>
+                <%= link_to club.name, club_manager_club_albums_path(club.club_id) %>
+              </li>
             <% end %>
           </ul>
         </li>
@@ -73,8 +79,10 @@
             <span class="sidebar-nav-mini-hide"><%= t "event" %></span>
           <% end %>
           <ul>
-            <% manager_of_club(current_user).each do |f| %>
-              <li><%= link_to f.name, t("do_nothing") %></li>
+            <% manager_of_club(current_user).each do |club| %>
+              <li>
+                <%= link_to club.name, club_manager_club_events_path(club.club_id) %>
+              </li>
             <% end %>
           </ul>
         </li>

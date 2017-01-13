@@ -96,7 +96,7 @@ clubs.each do |club|
     event_category_id = rand(1..3)
     date_start = Faker::Time.between(20.days.ago, Date.today, :all)
     date_end = Faker::Time.between(20.days.ago, Date.today, :all)
-    location = Faker::Address.city
+    location = Faker::Address.street_address + Faker::Address.street_address
     num_like = rand(0..100)
     created_at = Time.now + 2.month
 

@@ -1142,7 +1142,7 @@ a.sidebar-title:focus {
 .widget .widget-options,
 .widget .widget-options-left {
     position: absolute;
-    top: 5px;
+    bottom: 5px;
     opacity: 0.5;
     filter: alpha(opacity=50);
 }
